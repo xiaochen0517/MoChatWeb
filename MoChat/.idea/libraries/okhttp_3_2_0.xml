@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="okhttp-3.2.0">
+    <CLASSES>
+      <root url="jar://F:/下载文件/Chrome/OkHttpJar_jb51/okhttp-3.2.0.jar!/" />
+      <root url="jar://F:/下载文件/Chrome/okio-1.8.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
