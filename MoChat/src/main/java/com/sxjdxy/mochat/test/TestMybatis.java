@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -40,10 +41,15 @@ public class TestMybatis {
     public void testMyBatis(){
         System.out.println("start Test");
         UserDao userDao = session.getMapper(UserDao.class);
-        List<User> user = userDao.select();
-        for (User u:user){
-            System.out.println(u.toString());
-        }
+        User user = new User();
+        user.setUserid("uid001");
+        user.setNickname("nikename");
+        user.setPassword("123456");
+        int i = userDao.addUser(user);
+        System.out.println(i);
+        Date utilDate  =new Date();
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        System.out.println(sqlDate.toString());
     }
 
 }

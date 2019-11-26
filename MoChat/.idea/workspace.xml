@@ -6,7 +6,36 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="324f6f56-9a38-4c80-b317-3d91a72afd2a" name="Default Changelist" comment="" />
+    <list default="true" id="324f6f56-9a38-4c80-b317-3d91a72afd2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/fastjson_1_2_62.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/data/IMUrlData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/service/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/OkHttpUntil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/okhttp_3_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/test/TestMybatis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/test/TestMybatis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resouces/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resouces/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resouces/sqlmap-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resouces/sqlmap-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/test/TestMybatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/test/TestMybatis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/sqlmap-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/sqlmap-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/test/TestMybatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/test/TestMybatis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/test/TestOkHttp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/test/TestOkHttp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sqlmap-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sqlmap-config.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +45,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -28,17 +61,26 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1U30pBHSY8pXea6APcjYGHde9ig" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="F:/下载文件/Chrome/okio-1.8.0.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\Intellij_IDEA_Project\MoChat\MoChat\src\lib" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -52,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestOkHttp.testOkHttp">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.22">
     <configuration name="TestMybatis.testMyBatis" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MoChat-0.0.1" />
       <extension name="coverage">
@@ -159,14 +201,14 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.Tomcat 9.0.22" />
       <item itemvalue="JUnit.TestMybatis.testMyBatis" />
       <item itemvalue="JUnit.TestOkHttp.testOkHttp" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.22" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestOkHttp.testOkHttp" />
         <item itemvalue="JUnit.TestMybatis.testMyBatis" />
+        <item itemvalue="JUnit.TestOkHttp.testOkHttp" />
       </list>
     </recent_temporary>
   </component>
@@ -180,11 +222,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574570252795</updated>
-      <workItem from="1574570253991" duration="4988000" />
+      <workItem from="1574570253991" duration="5238000" />
+      <workItem from="1574647330305" duration="1214000" />
+      <workItem from="1574659921507" duration="7371000" />
+      <workItem from="1574687545013" duration="2010000" />
+      <workItem from="1574743052962" duration="404000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
