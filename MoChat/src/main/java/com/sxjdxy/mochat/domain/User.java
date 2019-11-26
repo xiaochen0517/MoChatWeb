@@ -15,12 +15,15 @@ public class User {
     private String userid;
     private String nickname;
     private String password;
+    private String mail;
     private String profilephot;//头像
     private String introduce;//签名
     private int sex;//性别
     private Date birthday;//生日
     private String address;//地址
     private boolean blog;//是否仅开通blog
+    private boolean mailstatus;//邮箱是否验证
+    private String authkey;//邮箱验证authkey
 
     @Override
     public String toString() {
@@ -29,13 +32,40 @@ public class User {
                 ", userid='" + userid + '\'' +
                 ", nickname='" + nickname + '\'' +
                 ", password='" + password + '\'' +
+                ", mail='" + mail + '\'' +
                 ", profilephot='" + profilephot + '\'' +
                 ", introduce='" + introduce + '\'' +
                 ", sex=" + sex +
                 ", birthday=" + birthday +
                 ", address='" + address + '\'' +
                 ", blog=" + blog +
+                ", mailstatus=" + mailstatus +
+                ", authkey='" + authkey + '\'' +
                 '}';
+    }
+
+    public String getAuthkey() {
+        return authkey;
+    }
+
+    public void setAuthkey(String authkey) {
+        this.authkey = authkey;
+    }
+
+    public boolean isMailstatus() {
+        return mailstatus;
+    }
+
+    public void setMailstatus(boolean mailstatus) {
+        this.mailstatus = mailstatus;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
     public boolean isBlog() {

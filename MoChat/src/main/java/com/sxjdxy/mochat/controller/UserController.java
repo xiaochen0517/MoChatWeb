@@ -32,9 +32,18 @@ public class UserController {
     @RequestMapping(value = "/adduser",
             method = RequestMethod.POST)
     @ResponseBody
-    private String addUser(@RequestParam("userid") String userid, @RequestParam("nickname") String nickname, @RequestParam("password") String password) {
+    private String addUser(@RequestParam("userid") String userid, @RequestParam("nickname") String nickname, @RequestParam("password") String password, @RequestParam("mail") String mail) {
         System.out.println("user-->adduser-->用户注册请求");
-        return userService.addUser(userid, nickname, password);
+        return userService.addUser(userid, nickname, password, mail);
+    }
+
+
+    @RequestMapping(value = "/verifymail", method = RequestMethod.GET)
+    @ResponseBody
+    private  String verifyMail(@RequestParam("userid") String userid, @RequestParam("authkey") String authkey){
+        System.out.println("user-->verifyMail-->邮箱验证请求");
+        System.out.println("userid:"+userid+"\nauthkey:"+authkey);
+        return "success";
     }
 
 }

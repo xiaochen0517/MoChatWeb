@@ -42,14 +42,14 @@ public class TestMybatis {
         System.out.println("start Test");
         UserDao userDao = session.getMapper(UserDao.class);
         User user = new User();
-        user.setUserid("uid001");
-        user.setNickname("nikename");
+        user.setUserid("userid11");
+        user.setNickname("nickname11");
         user.setPassword("123456");
-        int i = userDao.addUser(user);
-        System.out.println(i);
-        Date utilDate  =new Date();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-        System.out.println(sqlDate.toString());
+        user.setMail("mail");
+        user.setBlog(false);
+        user.setAuthkey("authKeydaadfsa");
+        int result = userDao.addUser(user);
+        System.out.println(result);
     }
 
 }
