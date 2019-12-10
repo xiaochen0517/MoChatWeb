@@ -14,7 +14,7 @@ public class TestMail {
 
     @Test
     public void testMail(){
-        MailUntil.sendMail("1453215", "2827075398@qq.com");
+        MailUntil.sendAddUserMail("1453215", "2827075398@qq.com");
     }
 
 }

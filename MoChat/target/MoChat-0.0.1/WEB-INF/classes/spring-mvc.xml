@@ -47,4 +47,6 @@
                      allowed-origins="*" />
     </mvc:cors>
 
+
+
 </beans>

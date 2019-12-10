@@ -12,11 +12,11 @@ import com.sxjdxy.mochat.until.SystemUntil;
 public class Log {
 
     public static void d(String tag, String message){
-        System.out.println(SystemUntil.getDate()+" : "+tag+" : ");
+        System.out.println(SystemUntil.getDate()+" : "+tag+" : "+message);
     }
 
     public static void e(String tag, String message){
-        System.err.println(SystemUntil.getDate()+" : "+tag+"  :  ");
+        System.err.println(SystemUntil.getDate()+" : "+tag+"  :  "+message);
     }
 
 }

@@ -9,22 +9,18 @@ package com.sxjdxy.mochat.service.service;
  */
 public interface UserService {
 
-    /**
-     * 注册用户
-     * @param userid userid
-     * @param nikename 昵称
-     * @param password 密码
-     * @param mail
-     * @return 处理结果
-     */
     String addUser(String userid, String nikename, String password, String mail);
 
-    /**
-     * 验证邮箱
-     * @param userId userid
-     * @param authKey 验证key
-     * @return 返回json
-     */
     String verifyMail(String userId, String authKey);
+
+    String editPw(String mail);
+
+    String verifyEditPw(String mail, String authcode);
+
+    String setPw(String mail, String authkey, String password);
+
+    String getContactsDataList(String useridJsonStr);
+
+    String getContactsDetailed(String userid);
 
 }

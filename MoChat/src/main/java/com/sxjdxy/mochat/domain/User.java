@@ -16,10 +16,11 @@ public class User {
     private String nickname;
     private String password;
     private String mail;
-    private String profilephot;//头像
+    private String profilephoto;//头像
     private String introduce;//签名
     private int sex;//性别
-    private Date birthday;//生日
+    private long birthday;//生日
+    private long joindate;
     private String address;//地址
     private boolean blog;//是否仅开通blog
     private boolean mailstatus;//邮箱是否验证
@@ -33,15 +34,32 @@ public class User {
                 ", nickname='" + nickname + '\'' +
                 ", password='" + password + '\'' +
                 ", mail='" + mail + '\'' +
-                ", profilephot='" + profilephot + '\'' +
+                ", profilephoto='" + profilephoto + '\'' +
                 ", introduce='" + introduce + '\'' +
                 ", sex=" + sex +
                 ", birthday=" + birthday +
+                ", joindate=" + joindate +
                 ", address='" + address + '\'' +
                 ", blog=" + blog +
                 ", mailstatus=" + mailstatus +
                 ", authkey='" + authkey + '\'' +
                 '}';
+    }
+
+    public long getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(long birthday) {
+        this.birthday = birthday;
+    }
+
+    public long getJoindate() {
+        return joindate;
+    }
+
+    public void setJoindate(long joindate) {
+        this.joindate = joindate;
     }
 
     public String getAuthkey() {
@@ -76,12 +94,12 @@ public class User {
         this.blog = blog;
     }
 
-    public String getProfilephot() {
-        return profilephot;
+    public String getProfilephoto() {
+        return profilephoto;
     }
 
-    public void setProfilephot(String profilephot) {
-        this.profilephot = profilephot;
+    public void setProfilephoto(String profilephoto) {
+        this.profilephoto = profilephoto;
     }
 
     public String getIntroduce() {
@@ -98,14 +116,6 @@ public class User {
 
     public void setSex(int sex) {
         this.sex = sex;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
     }
 
     public String getAddress() {

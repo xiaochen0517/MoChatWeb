@@ -22,4 +22,21 @@ public class MailData {
 
     public static final String ACCESS_SECRET = "ixs1X59s8OU6OA4iOSqhTiqFnXHnYq";
 
+    /**
+     * 注册用户模板
+     */
+    public static final String MSG_ADDUSER_HEAD = "<p>您好，欢迎使用MoChat，以下是您的验证链接：</p>" +
+            "<p><a href=\"";
+
+    public static final String MSG_ADDUSER_FOOT = "\">点此验证</a></p>" +
+            "<p>若未注册过本产品，请忽略此邮件。</p>" +
+            "<p>若有疑问请发送邮件到：lxc@xcmail.top</p>";
+
+    public static final String MSG_EDITPW_HEAD = "<p>您好，欢迎使用MoChat，以下是您的验证码：</p>" +
+            "<p>";
+
+    public static final String MSG_EDITPW_FOOT = "</p>" +
+            "<p>如非本人操作，请忽略此消息！</p>" +
+            "<p>若有疑问请发送邮件到：lxc@xcmail.top</p>";
+
 }

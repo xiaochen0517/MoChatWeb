@@ -1,7 +1,11 @@
 package com.sxjdxy.mochat.test;
 
+import com.alibaba.fastjson.JSON;
 import com.sxjdxy.mochat.dao.UserDao;
 import com.sxjdxy.mochat.domain.User;
+import com.sxjdxy.mochat.json.domain.ContactsJson;
+import com.sxjdxy.mochat.json.domain.ResContactsList;
+import com.sxjdxy.mochat.until.loger.Log;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.After;
@@ -10,7 +14,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,6 +26,7 @@ import java.util.List;
  */
 public class TestMybatis {
 
+    private static final String TAG = "TestMybatis";
     private SqlSession session;
 
     @Before
@@ -41,15 +46,31 @@ public class TestMybatis {
     public void testMyBatis(){
         System.out.println("start Test");
         UserDao userDao = session.getMapper(UserDao.class);
-        User user = new User();
-        user.setUserid("userid11");
-        user.setNickname("nickname11");
-        user.setPassword("123456");
-        user.setMail("mail");
-        user.setBlog(false);
-        user.setAuthkey("authKeydaadfsa");
-        int result = userDao.addUser(user);
-        System.out.println(result);
+        String[] a = {
+                "two",
+                "three",
+                "four1"
+        };
+        List<ContactsJson> contactsJsonList = new ArrayList<>();
+        int nullNum = 0;
+        for (String userid : a){
+            User user = userDao.findUserSingle(userid);
+            if (user != null && !user.getUserid().equals("")) {
+                Log.d(TAG, user.getNickname());
+                Log.d(TAG, user.getAddress());
+                ContactsJson contactsJson = new ContactsJson();
+                contactsJson.setUserid(user.getUserid());
+                contactsJson.setNickname(user.getNickname());
+                contactsJson.setIntroduce(user.getIntroduce());
+                contactsJson.setSex(user.getSex());
+                contactsJsonList.add(contactsJson);
+            }else {
+                nullNum ++;
+            }
+        }
+        ResContactsList resContactsList = new ResContactsList();
+        resContactsList.setErrorCode(0);
+        resContactsList.setNullNum(nullNum);
     }
 
 }

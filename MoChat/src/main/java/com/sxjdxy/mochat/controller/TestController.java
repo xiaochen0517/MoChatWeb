@@ -15,11 +15,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class TestController {
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @RequestMapping(value = "/test", method = RequestMethod.GET,
+            produces={"text/html;charset=UTF-8;","application/json;"})
     @ResponseBody
     public String getTest(){
         System.out.println("get test");
-        return "get success";
+        return "中文";
     }
 
 }

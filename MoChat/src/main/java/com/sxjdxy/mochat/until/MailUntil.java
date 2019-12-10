@@ -21,7 +21,19 @@ import javax.swing.text.StyledEditorKit;
  */
 public class MailUntil {
 
-    public static boolean sendMail(String authCode, String mailAddress) {
+    public static boolean sendAddUserMail(String authCode, String mailAddress){
+        return sendMail(MailData.MSG_ADDUSER_HEAD+
+                authCode+
+                MailData.MSG_ADDUSER_FOOT, mailAddress);
+    }
+
+    public static boolean sendEditPwMail(String authCode, String mailAddress){
+        return sendMail(MailData.MSG_EDITPW_HEAD+
+                authCode+
+                MailData.MSG_EDITPW_FOOT, mailAddress);
+    }
+
+    private static boolean sendMail(String sendMsg, String mailAddress) {
         DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", MailData.ACCESS_KEYID, MailData.ACCESS_SECRET);
         IAcsClient client = new DefaultAcsClient(profile);
         SingleSendMailRequest request = new SingleSendMailRequest();
@@ -32,11 +44,7 @@ public class MailUntil {
         request.setToAddress(mailAddress);
         request.setSubject(MailData.MAIL_TITLE);
         request.setTagName(MailData.MAIL_TAG);
-        request.setHtmlBody("<p>您好{NickName}，欢迎使用MoChat，以下是您的验证链接：</p>" +
-                "<p><a href=\""+authCode+"\">点此验证</a></p>" +
-                "<p>若未注册过本产品，请忽略此邮件。</p>" +
-                "<p>若有疑问请发送邮件到：lxc@xcmail.top</p>");
-
+        request.setHtmlBody(sendMsg);
         try {
             SingleSendMailResponse response = client.getAcsResponse(request);
             System.out.println(response.toString());
