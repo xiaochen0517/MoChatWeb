@@ -1,5 +1,9 @@
 package com.sxjdxy.mochat.service.service;
 
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * 功能：
  * user service 用户
@@ -22,5 +26,7 @@ public interface UserService {
     String getContactsDataList(String useridJsonStr);
 
     String getContactsDetailed(String userid);
+
+    String uploadProfilePhoto(HttpServletRequest request, String userid, String password, MultipartFile upload);
 
 }

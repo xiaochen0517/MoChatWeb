@@ -83,6 +83,15 @@ public interface UserDao {
     int setPassword(@Param("mail")String mail, @Param("password")String password);
 
     /**
+     * 更新用户头像
+     * @param filename 头像名
+     * @param userid 用户id
+     * @return int
+     */
+    @Update("update user set profilephoto = #{filename} where userid = #{userid}")
+    int setProfilePhoto(@Param("filename")String filename, @Param("userid")String userid);
+
+    /**
      * 查询userid是否重复
      * @param userid userid
      * @return 查询到指定条件的行数
@@ -163,5 +172,13 @@ public interface UserDao {
      */
     @Select("select * from user where userid = #{userid}")
     User findUserSingle(@Param("userid") String userid);
+
+    /**
+     * 获取指定用户密码
+     * @param userid userid
+     * @return 密码
+     */
+    @Select("select password from user where userid = #{userid}")
+    String findPassword(@Param("userid") String userid);
 
 }

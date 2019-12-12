@@ -2,11 +2,18 @@ package com.sxjdxy.mochat.controller;
 
 import com.sxjdxy.mochat.service.service.UserService;
 import com.sxjdxy.mochat.until.loger.Log;
+import okhttp3.FormBody;
+import okhttp3.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+import java.util.UUID;
 
 /**
  * 功能：
@@ -133,6 +140,18 @@ public class UserController {
     private String getContactsDetailed(@RequestParam("userid") String userid){
         Log.d(TAG, "获取指定用户详细信息 userid -- >"+userid);
         return userService.getContactsDetailed(userid);
+    }
+
+    /**
+     * 上传用户头像
+     * @return json
+     */
+    @RequestMapping(value = "/porfilephoto", method = RequestMethod.POST,
+            produces = {"text/html;charset=UTF-8;", "application/json;"})
+    @ResponseBody
+    private String uploadProfilePhoto(HttpServletRequest request, @RequestParam("userid")String userid, @RequestParam("password") String password,@RequestBody MultipartFile upload){
+        Log.d(TAG, "上传用户头像");
+        return userService.uploadProfilePhoto(request, userid, password, upload);
     }
 
 }

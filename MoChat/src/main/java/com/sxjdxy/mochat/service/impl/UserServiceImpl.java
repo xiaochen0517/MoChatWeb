@@ -21,13 +21,13 @@ import com.sxjdxy.mochat.until.loger.Log;
 import okhttp3.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.io.IOException;
 import java.net.URLDecoder;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * 功能：
@@ -358,6 +358,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 获取用户列表
+     *
      * @param useridJsonStr 上传的用户id list
      * @return json
      */
@@ -367,17 +368,17 @@ public class UserServiceImpl implements UserService {
         int nullNum = 0;
         List<ContactsJson> contactsJsonList = new ArrayList<>();
         //判断jsonstr
-        if (!useridJsonStr.equals("")){
+        if (!useridJsonStr.equals("")) {
             //开始解析
             try {
                 JSONArray jsonArray = JSON.parseArray(useridJsonStr);
                 for (int i = 0; i < jsonArray.size(); i++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     String userid = jsonObject.getString("userid");
-                    if (!userid.equals("")){
+                    if (!userid.equals("")) {
                         //开始查询
                         User user = userDao.findUserSingle(userid);
-                        if (user != null && !user.getUserid().equals("")){
+                        if (user != null && !user.getUserid().equals("")) {
                             //查询成功
                             ContactsJson contactsJson = new ContactsJson();
                             contactsJson.setUserid(user.getUserid());
@@ -387,21 +388,21 @@ public class UserServiceImpl implements UserService {
                             contactsJson.setSex(user.getSex());
                             contactsJsonList.add(contactsJson);
                             errorCode = 0;
-                        }else{
+                        } else {
                             //查询为空
-                            nullNum ++;
+                            nullNum++;
                         }
-                    }else{
+                    } else {
                         //获取到的userid为空
                         errorCode = 201;
                         break;
                     }
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 //解析json错误
                 errorCode = 102;
             }
-        }else{
+        } else {
             //上传的json为空
             errorCode = 101;
         }
@@ -415,7 +416,8 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     *获取用户详细信息
+     * 获取用户详细信息
+     *
      * @param userid 用户id
      * @return json
      */
@@ -423,11 +425,11 @@ public class UserServiceImpl implements UserService {
     public String getContactsDetailed(String userid) {
         ResContacts resContacts = new ResContacts();
         //判断userid
-        if (!userid.equals("")){
+        if (!userid.equals("")) {
             try {
                 //查询数据
                 User user = userDao.findUserSingle(userid);
-                if (user != null && !user.getUserid().equals("")){
+                if (user != null && !user.getUserid().equals("")) {
                     resContacts.setErrorCode(0);
                     resContacts.setUserid(user.getUserid());
                     resContacts.setNickname(user.getNickname());
@@ -438,20 +440,81 @@ public class UserServiceImpl implements UserService {
                     resContacts.setBirthday(user.getBirthday());
                     resContacts.setJoindate(user.getJoindate());
                     resContacts.setAddress(user.getAddress());
-                }else{
+                } else {
                     //查询值为空
                     resContacts.setErrorCode(201);
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 resContacts.setErrorCode(102);
             }
-        }else{
+        } else {
             //userid为空
             resContacts.setErrorCode(101);
         }
         String resjson = JSON.toJSONString(resContacts);
         Log.d(TAG, resjson);
         return resjson;
+    }
+
+    /**
+     * 上传用户头像
+     *
+     * @param request  请求
+     * @param userid   用户id
+     * @param password 密码
+     * @param upload   图片文件
+     * @return json
+     */
+    @Override
+    public String uploadProfilePhoto(HttpServletRequest request, String userid, String password, MultipartFile upload) {
+        //判断用户名密码
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put(errorCode, 400);
+        if (!userid.matches(userIdRegex)) {
+            //userid错误
+            jsonObject.put(errorCode, 101);
+        } else if (password.matches(passwordRegex)) {
+            jsonObject.put(errorCode, 102);
+        } else if (upload != null && request != null) {
+            jsonObject.put(errorCode, 103);
+        } else {
+            //判断用户名密码是否正确
+            String passwordDB = userDao.findPassword(userid);
+            if (!passwordDB.equals(password)) {
+                jsonObject.put(errorCode, 201);
+            } else {
+                try {
+                    // 上传的位置
+                    String path = request.getSession().getServletContext().getRealPath("/image/" + userid + "/profilephoto/");
+                    // 判断，该路径是否存在
+                    File file = new File(path);
+                    if (!file.exists()) {
+                        // 创建该文件夹
+                        file.mkdirs();
+                    }
+                    // 把文件的名称设置唯一值，uuid
+                    String uuid = UUID.randomUUID().toString().replace("-", "");
+                    System.out.println(uuid);
+                    String filename = uuid + upload.getContentType();
+                    // 完成文件上传
+                    upload.transferTo(new File(path, filename));
+                    //写入数据库
+                    if (userDao.setProfilePhoto(uuid, userid) > 0){
+                        //成功
+                        jsonObject.put(errorCode, 0);
+                    }else{
+                        //失败
+                        jsonObject.put(errorCode, 202);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    jsonObject.put(errorCode, 301);
+                }
+            }
+        }
+        String jsonstr = jsonObject.toJSONString();
+        Log.d(TAG, jsonstr);
+        return jsonstr;
     }
 }
