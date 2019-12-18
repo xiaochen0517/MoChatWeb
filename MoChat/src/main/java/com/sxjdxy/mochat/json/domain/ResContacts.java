@@ -14,7 +14,7 @@ public class ResContacts {
     private String userid;
     private String nickname;
     private String mail;
-    private String profilephot;//头像
+    private String profilephoto;//头像
     private String introduce;//签名
     private int sex;//性别
     private long birthday;//生日
@@ -28,7 +28,7 @@ public class ResContacts {
                 ", userid='" + userid + '\'' +
                 ", nickname='" + nickname + '\'' +
                 ", mail='" + mail + '\'' +
-                ", profilephot='" + profilephot + '\'' +
+                ", profilephoto='" + profilephoto + '\'' +
                 ", introduce='" + introduce + '\'' +
                 ", sex=" + sex +
                 ", birthday=" + birthday +
@@ -69,12 +69,12 @@ public class ResContacts {
         this.mail = mail;
     }
 
-    public String getProfilephot() {
-        return profilephot;
+    public String getProfilephoto() {
+        return profilephoto;
     }
 
-    public void setProfilephot(String profilephot) {
-        this.profilephot = profilephot;
+    public void setProfilephoto(String profilephoto) {
+        this.profilephoto = profilephoto;
     }
 
     public String getIntroduce() {

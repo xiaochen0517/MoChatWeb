@@ -9,6 +9,6 @@ package com.sxjdxy.mochat.data;
  */
 public class UrlData {
 
-    public static final String HOST_URL = "http://192.168.59.1:8080";
+    public static final String HOST_URL = "http://mochat.androidzy.cn";
 
 }

@@ -181,4 +181,12 @@ public interface UserDao {
     @Select("select password from user where userid = #{userid}")
     String findPassword(@Param("userid") String userid);
 
+    /**
+     * 获取指定用户头像
+     * @param userid userid
+     * @return 密码
+     */
+    @Select("select profilephoto from user where userid = #{userid}")
+    String findProfilePhoto(@Param("userid") String userid);
+
 }

@@ -433,7 +433,7 @@ public class UserServiceImpl implements UserService {
                     resContacts.setErrorCode(0);
                     resContacts.setUserid(user.getUserid());
                     resContacts.setNickname(user.getNickname());
-                    resContacts.setProfilephot(user.getProfilephoto());
+                    resContacts.setProfilephoto(user.getProfilephoto());
                     resContacts.setMail(user.getMail());
                     resContacts.setIntroduce(user.getIntroduce());
                     resContacts.setSex(user.getSex());
@@ -474,9 +474,10 @@ public class UserServiceImpl implements UserService {
         if (!userid.matches(userIdRegex)) {
             //userid错误
             jsonObject.put(errorCode, 101);
-        } else if (password.matches(passwordRegex)) {
+        } else if (!password.matches(passwordRegex)) {
+            System.out.println(password);
             jsonObject.put(errorCode, 102);
-        } else if (upload != null && request != null) {
+        } else if (upload == null || request == null) {
             jsonObject.put(errorCode, 103);
         } else {
             //判断用户名密码是否正确
@@ -486,7 +487,7 @@ public class UserServiceImpl implements UserService {
             } else {
                 try {
                     // 上传的位置
-                    String path = request.getSession().getServletContext().getRealPath("/image/" + userid + "/profilephoto/");
+                    String path = request.getSession().getServletContext().getRealPath("/img/" + userid + "/");
                     // 判断，该路径是否存在
                     File file = new File(path);
                     if (!file.exists()) {
@@ -494,13 +495,20 @@ public class UserServiceImpl implements UserService {
                         file.mkdirs();
                     }
                     // 把文件的名称设置唯一值，uuid
-                    String uuid = UUID.randomUUID().toString().replace("-", "");
-                    System.out.println(uuid);
-                    String filename = uuid + upload.getContentType();
+                    String filename = UUID.randomUUID().toString().replace("-", "");
+                    System.out.println(filename);
                     // 完成文件上传
                     upload.transferTo(new File(path, filename));
+                    //获取原文件
+                    String profilename = userDao.findProfilePhoto(userid);
+                    //删除原文件
+                    File profile = new File(path+profilename);
+                    if(profile.exists()&&profile.isFile()) {
+                        boolean deleteFile = profile.delete();
+                        Log.d(TAG, "文件删除"+path+filename+"状态"+deleteFile);
+                    }
                     //写入数据库
-                    if (userDao.setProfilePhoto(uuid, userid) > 0){
+                    if (userDao.setProfilePhoto(filename, userid) > 0){
                         //成功
                         jsonObject.put(errorCode, 0);
                     }else{
@@ -517,4 +525,5 @@ public class UserServiceImpl implements UserService {
         Log.d(TAG, jsonstr);
         return jsonstr;
     }
+
 }
