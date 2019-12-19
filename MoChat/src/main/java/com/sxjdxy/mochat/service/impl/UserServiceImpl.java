@@ -11,10 +11,10 @@ import com.sxjdxy.mochat.json.domain.ContactsJson;
 import com.sxjdxy.mochat.json.domain.ResContacts;
 import com.sxjdxy.mochat.json.domain.ResContactsList;
 import com.sxjdxy.mochat.service.service.UserService;
-import com.sxjdxy.mochat.until.MailUntil;
-import com.sxjdxy.mochat.until.OkHttpUntil;
-import com.sxjdxy.mochat.until.PropertiesUtil;
-import com.sxjdxy.mochat.until.SystemUntil;
+import com.sxjdxy.mochat.until.http.MailUntil;
+import com.sxjdxy.mochat.until.http.OkHttpUntil;
+import com.sxjdxy.mochat.until.properties.PropertiesUntil;
+import com.sxjdxy.mochat.until.system.SystemUntil;
 import com.sxjdxy.mochat.until.data.JsonDataUntil;
 import com.sxjdxy.mochat.until.data.MD5DataUntil;
 import com.sxjdxy.mochat.until.loger.Log;
@@ -300,7 +300,7 @@ public class UserServiceImpl implements UserService {
                         userDao.setPassword(mail, password);
                         //获取token
                         Log.d(TAG, propertiesPath);
-                        String token = PropertiesUtil.getPro(URLDecoder.decode(propertiesPath, "utf-8"), "access_token");
+                        String token = new PropertiesUntil.Builder().getPro(URLDecoder.decode(propertiesPath, "utf-8"), "access_token");
                         //获取username
                         User user = userDao.findUserM(mail);
                         if (user == null) {
@@ -330,7 +330,7 @@ public class UserServiceImpl implements UserService {
                                             imstr.toJSONString(), newtoken);
                                     if (response2.isSuccessful()) {
                                         //储存token
-                                        PropertiesUtil.updatePro(URLDecoder.decode(propertiesPath, "utf-8"), "access_token", newtoken);
+                                        new PropertiesUntil.Builder().updatePro(URLDecoder.decode(propertiesPath, "utf-8"), "access_token", newtoken);
                                         jsonObject.put(errorCode, 0);
                                     } else {
                                         //第二次修改失败

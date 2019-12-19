@@ -7,29 +7,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="324f6f56-9a38-4c80-b317-3d91a72afd2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/domain/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/domain/Blog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/domain/Blogcom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/domain/Collect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/domain/Msgcom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/domain/Perspace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/domain/Picture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/domain/UserSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/data/UrlDataUntil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/properties/PropertiesUntil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/properties/ThreadProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resouces/user.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/domain/Admin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/domain/Blog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/domain/Blogcom.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/domain/Collect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/domain/Msgcom.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/domain/Perspace.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/domain/Picture.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/domain/UserSetting.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/data/UrlDataUntil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/properties/PropertiesUntil$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/properties/PropertiesUntil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/properties/ThreadProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/user.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/domain/Admin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/domain/Blog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/domain/Blogcom.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/domain/Collect.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/domain/Msgcom.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/domain/Perspace.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/domain/Picture.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/domain/UserSetting.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/data/UrlDataUntil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/properties/PropertiesUntil$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/properties/PropertiesUntil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/properties/ThreadProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/user.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/data/UrlData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/data/UrlData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/json/domain/ResContacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/json/domain/ResContacts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/controller/BlogUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/controller/BlogUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/service/impl/BlogUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/service/impl/BlogUserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resouces/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resouces/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/service/service/BlogUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/service/service/BlogUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/test/TestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/test/TestData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/test/TestMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/test/TestMail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/test/TestProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/test/TestProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/MailUntil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/http/MailUntil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/OkHttpUntil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/http/OkHttpUntil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/PropertiesUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/SystemUntil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/system/SystemUntil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/loger/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sxjdxy/mochat/until/loger/Log.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/json/domain/ResContacts.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/json/domain/ResContacts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/controller/BlogUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/controller/BlogUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/data/UrlData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/data/UrlData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/service/impl/BlogUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/service/impl/BlogUserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/service/service/BlogUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/service/service/BlogUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/test/TestData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/test/TestData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/test/TestMail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/test/TestMail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/test/TestProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/test/TestProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/MailUntil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/http/MailUntil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/OkHttpUntil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/http/OkHttpUntil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/PropertiesUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/SystemUntil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/system/SystemUntil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/loger/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/com/sxjdxy/mochat/until/loger/Log.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/MoChat-0.0.1/WEB-INF/classes/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/json/domain/ResContacts.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/json/domain/ResContacts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/controller/BlogUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/controller/BlogUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/data/UrlData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/data/UrlData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/service/impl/BlogUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/service/impl/BlogUserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/service/service/BlogUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/service/service/BlogUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/test/TestData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/test/TestData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/test/TestMail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/test/TestMail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/test/TestProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/test/TestProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/MailUntil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/http/MailUntil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/OkHttpUntil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/http/OkHttpUntil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/PropertiesUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/SystemUntil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/system/SystemUntil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/loger/Log.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sxjdxy/mochat/until/loger/Log.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,7 +126,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="spring" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -262,9 +316,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestProperties.TestPro" />
         <item itemvalue="JUnit.TestData.testData" />
         <item itemvalue="JUnit.TestMybatis.testMyBatis" />
-        <item itemvalue="JUnit.TestProperties.TestPro" />
         <item itemvalue="JUnit.TestMail.testMail" />
         <item itemvalue="JUnit.TestOkHttp.testOkHttp" />
       </list>
@@ -316,7 +370,9 @@
       <workItem from="1576493604887" duration="3225000" />
       <workItem from="1576508724220" duration="769000" />
       <workItem from="1576635637245" duration="2204000" />
-      <workItem from="1576654164060" duration="1547000" />
+      <workItem from="1576654164060" duration="2227000" />
+      <workItem from="1576667750782" duration="2783000" />
+      <workItem from="1576713340173" duration="12160000" />
     </task>
     <task id="LOCAL-00001" summary="完成用户注册">
       <created>1574778407001</created>
@@ -332,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575943217567</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修复上传头像不会删除旧头像的BUG&#10;数据库设计完成，domain全部建立完成">
+      <created>1576656048250</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576656048250</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,6 +417,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完成用户注册" />
     <MESSAGE value="修复用户注册bug，完成获取用户列表信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="修复用户注册bug，完成获取用户列表信息" />
+    <MESSAGE value="修复上传头像不会删除旧头像的BUG&#10;数据库设计完成，domain全部建立完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复上传头像不会删除旧头像的BUG&#10;数据库设计完成，domain全部建立完成" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.sxjdxy.mochat.until;
+package com.sxjdxy.mochat.until.http;
 
 import com.sxjdxy.mochat.data.IMUrlData;
 import okhttp3.*;

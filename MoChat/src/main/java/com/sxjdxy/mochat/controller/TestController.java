@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class TestController {
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET,
+    @RequestMapping(value = "/test", method = RequestMethod.DELETE,
             produces={"text/html;charset=UTF-8;","application/json;"})
     @ResponseBody
     public String getTest(){

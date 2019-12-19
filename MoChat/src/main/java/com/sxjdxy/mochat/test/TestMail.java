@@ -1,6 +1,6 @@
 package com.sxjdxy.mochat.test;
 
-import com.sxjdxy.mochat.until.MailUntil;
+import com.sxjdxy.mochat.until.http.MailUntil;
 import org.junit.Test;
 
 /**

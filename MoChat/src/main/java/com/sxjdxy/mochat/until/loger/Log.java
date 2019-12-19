@@ -1,6 +1,6 @@
 package com.sxjdxy.mochat.until.loger;
 
-import com.sxjdxy.mochat.until.SystemUntil;
+import com.sxjdxy.mochat.until.system.SystemUntil;
 
 /**
  * 功能：
