@@ -13,4 +13,6 @@ public interface BlogUserService {
 
     String logout(String authkey);
 
+    String getUserData(String authkey);
+
 }

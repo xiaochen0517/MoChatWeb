@@ -14,6 +14,8 @@ import java.util.Properties;
  */
 public class PropertiesUntil {
 
+    private String path;
+
     private Properties properties = null;
 
     private FileOutputStream output = null;
@@ -26,11 +28,11 @@ public class PropertiesUntil {
     }
 
     public void load(String path) throws IOException {
+        this.path = path;
         FileInputStream input = new FileInputStream(path);
         properties = new Properties();
         properties.load(input);
-        // 文件输出流
-        output = new FileOutputStream(path);
+        input.close();
     }
 
     /**
@@ -42,7 +44,7 @@ public class PropertiesUntil {
      * @throws IOException io异常
      */
     public void setPro(String key, String value) throws IOException {
-        if (properties != null && output != null) {
+        if (properties != null) {
             properties.setProperty(key, value);
         } else {
             throw new IOException("Please use load method");
@@ -57,7 +59,7 @@ public class PropertiesUntil {
      * @throws IOException io异常
      */
     public void delPro(String key) throws IOException {
-        if (properties != null && output != null) {
+        if (properties != null) {
             properties.remove(key);
         } else {
             throw new IOException("Please use load method");
@@ -71,7 +73,11 @@ public class PropertiesUntil {
      * @throws IOException
      */
     public boolean commit() throws IOException {
-        if (properties != null && output != null) {
+        if (properties != null) {
+            if (output == null){
+                // 文件输出流
+                output = new FileOutputStream(path);
+            }
             // 将Properties集合保存到流中
             properties.store(output, null);
             output.close();// 关闭流
@@ -89,7 +95,7 @@ public class PropertiesUntil {
      * @throws IOException io异常
      */
     public String getPro(String key) throws IOException {
-        if (properties != null && output != null) {
+        if (properties != null) {
             return properties.getProperty(key, "");
         } else {
             throw new IOException("Please use load method");

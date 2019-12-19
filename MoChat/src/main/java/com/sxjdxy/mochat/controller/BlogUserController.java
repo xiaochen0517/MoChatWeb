@@ -49,4 +49,17 @@ public class BlogUserController {
         return blogUserService.logout(authkey);
     }
 
+    /**
+     * 获取用户信息
+     * @param authkey 验证密匙
+     * @return json
+     */
+    @RequestMapping(value = "/userdata", method = RequestMethod.POST,
+            produces = {"text/html;charset=UTF-8;", "application/json;"})
+    @ResponseBody
+    private String getUserData(@RequestParam("authkey")String authkey){
+        Log.d(TAG, "获取用户信息");
+        return blogUserService.getUserData(authkey);
+    }
+
 }

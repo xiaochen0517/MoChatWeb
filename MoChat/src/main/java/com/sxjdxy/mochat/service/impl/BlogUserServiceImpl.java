@@ -1,7 +1,10 @@
 package com.sxjdxy.mochat.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.sxjdxy.mochat.dao.UserDao;
+import com.sxjdxy.mochat.domain.User;
+import com.sxjdxy.mochat.json.domain.ResContacts;
 import com.sxjdxy.mochat.service.service.BlogUserService;
 import com.sxjdxy.mochat.until.data.UrlDataUntil;
 import com.sxjdxy.mochat.until.loger.Log;
@@ -39,6 +42,13 @@ public class BlogUserServiceImpl implements BlogUserService {
     @Autowired
     private UserDao userDao;
 
+    /**
+     * 用户登录
+     *
+     * @param userid   用户id
+     * @param password 密码
+     * @return json
+     */
     @Override
     public String login(String userid, String password) {
         JSONObject jsonObject = new JSONObject();
@@ -58,15 +68,17 @@ public class BlogUserServiceImpl implements BlogUserService {
                 try {
                     //查看properties中是否有重复的数据
                     String propertiesPath = UrlDataUntil.getPropertiesPath("user.properties");
-                    if (propertiesPath == null){
+                    if (propertiesPath == null) {
+                        //获取到的配置文件路径为空
                         jsonObject.put(errorCode, 401);
-                    }else {
+                    } else {
                         PropertiesUntil propertiesUntil = new PropertiesUntil(propertiesPath);
                         String timeStr = propertiesUntil.getPro(userid);
                         if (!timeStr.equals("")) {
+                            String oldAuthkey = propertiesUntil.getPro(password);
                             //删除数据
                             propertiesUntil.delPro(password);
-                            propertiesUntil.delPro(authkey);
+                            propertiesUntil.delPro(oldAuthkey);
                             propertiesUntil.delPro(userid);
                         }
                         //用户密码验证正确，保存数据
@@ -80,6 +92,7 @@ public class BlogUserServiceImpl implements BlogUserService {
                         jsonObject.put("AuthKey", authkey);
                     }
                 } catch (IOException e) {
+                    //写入密匙错误
                     e.printStackTrace();
                     jsonObject.put(errorCode, 301);
                 }
@@ -93,6 +106,12 @@ public class BlogUserServiceImpl implements BlogUserService {
         return reJson;
     }
 
+    /**
+     * 用户注销
+     *
+     * @param authkey 验证密匙
+     * @return json
+     */
     @Override
     public String logout(String authkey) {
         JSONObject jsonObject = new JSONObject();
@@ -103,37 +122,95 @@ public class BlogUserServiceImpl implements BlogUserService {
         } else {
             try {
                 String propertiesPath = UrlDataUntil.getPropertiesPath("user.properties");
-                if (propertiesPath == null){
+                if (propertiesPath == null) {
+                    //获取到的配置文件路径为空
                     jsonObject.put(errorCode, 301);
-                }else{
+                } else {
                     //查询userid
                     PropertiesUntil propertiesUntil = new PropertiesUntil(propertiesPath);
                     String userid = propertiesUntil.getPro(authkey);
-                    if (userid.matches(userIdRegex)){
+                    if (userid.matches(userIdRegex)) {
                         //获取password
                         String password = userDao.findPassword(userid);
-                        if (password != null && password.matches(passwordRegex)){
+                        if (password != null && password.matches(passwordRegex)) {
                             //成功注销,删除key
                             propertiesUntil.delPro(password);
                             propertiesUntil.delPro(authkey);
                             propertiesUntil.delPro(userid);
                             propertiesUntil.commit();
                             jsonObject.put(errorCode, 0);
-                        }else{
+                        } else {
                             //获取到password错误
                             jsonObject.put(errorCode, 402);
                         }
-                    }else{
+                    } else {
                         //注销失败
                         jsonObject.put(errorCode, 401);
                     }
                 }
             } catch (Exception e) {
+                //读写密匙错误
                 e.printStackTrace();
                 jsonObject.put(errorCode, 201);
             }
         }
         String reJson = jsonObject.toJSONString();
+        Log.d(TAG, reJson);
+        return reJson;
+    }
+
+    /**
+     * 获取用户信息
+     * @param authkey 验证密匙
+     * @return json
+     */
+    @Override
+    public String getUserData(String authkey) {
+        ResContacts resContacts = new ResContacts();
+        //检查authkey
+        if (!authkey.matches(passwordRegex)) {
+            //authkey错误
+            resContacts.setErrorCode(101);
+        } else {
+            try {
+                String propertiesPath = UrlDataUntil.getPropertiesPath("user.properties");
+                if (propertiesPath == null) {
+                    //获取到的配置文件路径为空
+                    resContacts.setErrorCode(301);
+                } else {
+                    //查询userid
+                    PropertiesUntil propertiesUntil = new PropertiesUntil(propertiesPath);
+                    String userid = propertiesUntil.getPro(authkey);
+                    if (userid.matches(userIdRegex)) {
+                        //查询信息
+                        User user = userDao.findUserSingle(userid);
+                        if (user == null){
+                            //查询到的用户信息为空
+                            resContacts.setErrorCode(501);
+                        }else{
+                            resContacts.setErrorCode(0);
+                            resContacts.setUserid(userid);
+                            resContacts.setAddress(user.getAddress());
+                            resContacts.setJoindate(user.getJoindate());
+                            resContacts.setBirthday(user.getBirthday());
+                            resContacts.setSex(user.getSex());
+                            resContacts.setIntroduce(user.getIntroduce());
+                            resContacts.setMail(user.getMail());
+                            resContacts.setNickname(user.getNickname());
+                            resContacts.setProfilephoto(user.getProfilephoto());
+                        }
+                    } else {
+                        //authkey验证失败
+                        resContacts.setErrorCode(401);
+                    }
+                }
+            } catch (Exception e) {
+                //读写密匙错误
+                e.printStackTrace();
+                resContacts.setErrorCode(201);
+            }
+        }
+        String reJson = JSON.toJSONString(resContacts);
         Log.d(TAG, reJson);
         return reJson;
     }
