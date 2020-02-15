@@ -8,7 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="324f6f56-9a38-4c80-b317-3d91a72afd2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,6 +326,7 @@
       <workItem from="1577709740442" duration="236000" />
       <workItem from="1577719941392" duration="591000" />
       <workItem from="1577770276520" duration="1149000" />
+      <workItem from="1581749906722" duration="24000" />
     </task>
     <task id="LOCAL-00001" summary="完成用户注册">
       <created>1574778407001</created>
